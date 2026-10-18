@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Page Not Found - AURELIA</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-base: #0a0a0a;
+            --bg-surface: #111111;
+            --gold: #C6A87C;
+            --gold-hover: #DEC29A;
+            --text-main: #F5F5F5;
+            --text-muted: #999999;
+            --font-main: 'Inter', sans-serif;
+            --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            -webkit-font-smoothing: antialiased;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Background effects */
+        .bg-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(198,168,124,0.05) 0%, var(--bg-base) 70%);
+            z-index: 0;
+        }
+
+        .bg-lines {
+            position: absolute;
+            top: 0; bottom: 0; left: 10%; width: 80%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.3;
+        }
+
+        .bg-lines span {
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.1), transparent);
+        }
+
+        /* Content Container */
+        .content {
+            position: relative;
+            z-index: 10;
+            max-width: 600px;
+            animation: fadeUp 1s var(--transition) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* Logo */
+        .logo {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 40px;
+            text-decoration: none;
+        }
+        .logo-icon-svg {
+            height: 32px;
+            width: auto;
+            fill: var(--text-main);
+            margin-bottom: 4px;
+        }
+        .logo-main {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 0.3em;
+            color: var(--text-main);
+            line-height: 1;
+        }
+        .logo-sub {
+            font-size: 0.5rem;
+            letter-spacing: 0.6em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        /* 404 Typography */
+        .error-code {
+            font-size: clamp(6rem, 20vw, 12rem);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -0.05em;
+            color: transparent;
+            -webkit-text-stroke: 2px var(--gold);
+            margin-bottom: 20px;
+            text-shadow: 0 0 40px rgba(198,168,124,0.1);
+        }
+
+        .error-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .error-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 36px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border-radius: 30px;
+            transition: var(--transition);
+            border: 1px solid var(--gold);
+            background: var(--gold);
+            color: var(--bg-base);
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(198,168,124,0.1);
+        }
+
+        /* Animation */
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 576px) {
+            .error-code { font-size: 6rem; }
+            .error-title { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+    <div class="bg-lines">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="content">
+        <a href="/" class="logo">
+            <svg class="logo-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 16L12 2L22 16H2Z" fill="white"/>
+                <path d="M6 16L12 7L18 16H6Z" fill="#0a0a0a"/>
+            </svg>
+            <div class="logo-main">AURELIA</div>
+            <div class="logo-sub">DETAILING</div>
+        </a>
+
+        <div class="error-code">404</div>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-desc">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let's get you back on the right track.</p>
+
+        <a href="/" class="btn">RETURN TO HOME <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+</body>
+</html>
