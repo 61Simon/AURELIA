@@ -1334,22 +1334,8 @@
             submitBtn.textContent = 'Sending...';
             
             setTimeout(() => {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Submit Request';
-                successMsg.style.display = 'block';
-                form.reset();
-                document.getElementById('service').style.color = 'var(--text-muted)';
-                
-                // Reset floating labels visually
-                document.querySelectorAll('.form-label').forEach(label => {
-                    label.style.top = '15px';
-                    label.style.fontSize = '1rem';
-                    label.style.color = 'var(--text-muted)';
-                    label.style.letterSpacing = 'normal';
-                    label.style.textTransform = 'none';
-                });
-
-                setTimeout(() => { successMsg.style.display = 'none'; }, 5000);
+                // Перенаправляем пользователя на страницу благодарности
+                window.location.href = 'thank-you.html';
             }, 1000);
         });
 
