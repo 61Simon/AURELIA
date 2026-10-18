@@ -16,9 +16,7 @@
     <style>
         :root {
             --bg-base: #0a0a0a;
-            --bg-surface: #111111;
             --gold: #C6A87C;
-            --gold-hover: #DEC29A;
             --text-main: #F5F5F5;
             --text-muted: #999999;
             --font-main: 'Inter', sans-serif;
@@ -83,7 +81,10 @@
             gap: 4px;
             margin-bottom: 40px;
             text-decoration: none;
+            transition: opacity 0.3s;
         }
+        .logo:hover { opacity: 0.8; }
+        
         .logo-icon-svg {
             height: 32px;
             width: auto;
@@ -129,6 +130,9 @@
             color: var(--text-muted);
             line-height: 1.6;
             margin-bottom: 40px;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Button */
@@ -159,13 +163,9 @@
 
         /* Animation */
         @keyframes fadeUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Mobile adjustments */
         @media (max-width: 576px) {
             .error-code { font-size: 6rem; }
             .error-title { font-size: 1rem; }
@@ -180,7 +180,8 @@
     </div>
 
     <div class="content">
-        <a href="/" class="logo">
+        <!-- Ссылка на главную (index.html) -->
+        <a href="index.html" class="logo">
             <svg class="logo-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2 16L12 2L22 16H2Z" fill="white"/>
                 <path d="M6 16L12 7L18 16H6Z" fill="#0a0a0a"/>
@@ -193,7 +194,8 @@
         <h1 class="error-title">Page Not Found</h1>
         <p class="error-desc">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let's get you back on the right track.</p>
 
-        <a href="/" class="btn">RETURN TO HOME <i class="fa-solid fa-arrow-right"></i></a>
+        <!-- Кнопка возврата на главную (index.html) -->
+        <a href="index.html" class="btn">RETURN TO HOME <i class="fa-solid fa-arrow-right"></i></a>
     </div>
 
 </body>
